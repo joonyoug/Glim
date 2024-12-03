@@ -1,0 +1,38 @@
+#include <string>
+#include <vector>
+#include <stack>
+#include <sstream>
+
+using namespace std;
+
+int solution(string s) {
+    int answer = 0;
+
+    stringstream ss;
+    ss.str(s);
+
+    stack<int> st;
+
+    int t = 0;
+    string tmp = "0";
+    while(ss>>tmp)
+    {
+        if(tmp == "Z")
+        {
+            st.pop();
+        }
+        else
+        {        
+            t = stoi(tmp);
+            st.push(t);
+        }
+    }
+
+    while(!st.empty())
+    {
+        answer += st.top();
+        st.pop();
+    }
+
+    return answer;
+}
