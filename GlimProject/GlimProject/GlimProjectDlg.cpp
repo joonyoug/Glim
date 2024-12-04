@@ -224,7 +224,7 @@ void CGlimProjectDlg::makeCircle(int inputX1, int inputY1)
 	}
 
 	std::cout << "(X,Y):=" << inputX1 << "," << inputY1 << " radius:" << radius << std::endl;
-
+	
 	for (int i = 0;i < m_height;i++) {
 		for (int j = 0;j < m_width;j++) {
 			if (checkValidation(j, i, inputX1, inputY1, radius)) {
@@ -286,7 +286,7 @@ void CGlimProjectDlg::checkRedius() {
 	cout << "Radius: " << radius << endl;
 
 	drawCircleLine(xCenter, yCenter, radius );
-	writeRadius(radius / 2);
+	writeRadius(radius);
 	
 
 }
@@ -437,7 +437,7 @@ void CGlimProjectDlg::moveCircle(int x1, int y1, int x2, int y2)
 
 		CString fileName;
 
-		fileName.Format(_T("C:\\Users\\epgis\\Desktop\\glim\\GlimProject\\GlimProject\\rescircle_%d_%d.bmp"), x1, y1); 
+		fileName.Format(_T("C:\\Users\\epgis\\Desktop\\mfcProject\\GlimProject\\GlimProject\\res\\circle_%d_%d.bmp"), x1, y1); 
 	
 		m_image.Save(fileName); 
 	}
